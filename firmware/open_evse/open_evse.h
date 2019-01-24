@@ -620,7 +620,7 @@ extern AutoCurrentCapacityController g_ACCController;
 #else
 #define MCP23008 // Adafruit I2C Backpack
 #endif
-#include "./LiquidTWI2.h"
+#include "./LiquidTWI_DM.h"
 #define LCD_I2C_ADDR 0x20 // for adafruit shield or backpack
 #endif // I2CLCD_PCF8574
 #endif // RGBLCD || I2CLCD
@@ -827,7 +827,7 @@ class OnboardDisplay
 #ifdef I2CLCD_PCF8574
   LiquidCrystal_I2C m_Lcd;
 #else
-  LiquidTWI2 m_Lcd;
+  LiquidTWI_DM m_Lcd;
 #endif // I2CLCD_PCF8574
 #endif // defined(RGBLCD) || defined(I2CLCD)
   uint8_t m_bFlags;

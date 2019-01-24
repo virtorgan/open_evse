@@ -90,6 +90,9 @@
 #define BIT_RW 0b01000000
 #define BIT_EN 0b00100000
 
+// For compatibility
+#define LTI_TYPE_MCP23017 1
+
 class LiquidTWI_DM : public Print {
 public:
 	LiquidTWI_DM(uint8_t i2cAddr,uint8_t detectDevice=0,uint8_t backlightInverted=0);
@@ -127,6 +130,9 @@ public:
     uint8_t readRegister(uint8_t); //check registers
     void setRegister(uint8_t, uint8_t);  //set registers
 
+		void setMCPType(uint8_t mcptype) {
+	// here only for compatibility with LiquidTWI2
+	  }
 private:
 	void send(uint8_t, uint8_t);
 	uint8_t _displayfunction; // Function set
